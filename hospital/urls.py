@@ -1,0 +1,23 @@
+from django.urls import path
+from . import views
+
+urlpatterns=[
+    path('', views.Home, name='home'),
+    path('about/', views.About, name='about'),
+    path('contact/', views.Contact, name='contact'),
+    path('admin_login/', views.Login, name='admin_login'),
+    path('admin_logout/', views.Logout_admin, name='admin_logout'),
+    path('index/', views.index, name='dashboard'),
+
+    path('view_doctor/', views.view_doctor, name='view_doctor'),
+    path('add_doctor/', views.add_doctor, name='add_doctor'),
+    path('delete_doctor(?P<int:did>/)', views.delete_doctor, name='delete_doctor'),
+
+    path('view_patient/', views.view_patient, name='view_patient'),
+    path('add_patient/', views.add_patient, name='add_patient'),
+    path('delete_patient(?P<int:pid>/)', views.delete_patient, name='delete_patient'),
+
+    path('view_appointment/', views.view_Appointment, name='view_appointment'),
+    path('add_appointment/', views.add_appointment, name='add_appointment'),
+    path('delete_appointment(?P<int:aid>/)', views.delete_Appointment, name='delete_appointment'),
+]
