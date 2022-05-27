@@ -103,7 +103,8 @@ def add_doctor(request):
         s = request.POST['special']
 
         try:
-            Doctor.objects.create(name=n, mobile=m, special=s)
+            d1 = Doctor.objects.create(name=n, mobile=m, special=s)
+            d1.save()
             error = "no"
         
         except:
