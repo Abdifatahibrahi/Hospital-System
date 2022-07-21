@@ -7,18 +7,18 @@
 
 {% block content %}
   
-{% ifequal error "no" %}
+{% if error == "no" %}
     <script>
         alert("Logged in successfully ");
         window.location = "{% url 'dashboard' %}";
     </script>
-{% endifequal %}
+{% endif %}
 
-{% ifequal error "yes" %}
+{% if error == "yes" %}
     <script>
         alert("invalid login credentials! try again");
     </script>
-{% endifequal %}
+{% endif %}
 
 
 <div class="container">
